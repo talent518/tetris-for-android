@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="time">24dp</dimen>
+    <dimen name="gap">18px</dimen>
+    <dimen name="label">14dp</dimen>
+    <dimen name="lable_gap_value">7dp</dimen>
+    <dimen name="value">14dp</dimen>
+    <dimen name="help">12dp</dimen>
+</resources>

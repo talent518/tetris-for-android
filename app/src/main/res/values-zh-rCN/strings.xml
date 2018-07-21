@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">俄罗斯方块</string>
+    <string name="scores">分数</string>
+    <string name="lines">行数</string>
+    <string name="help">菜单：菜单键\n暂停：菜单键\n继续：菜单键\n旋转：上键\n左移：下键\n右移：右键\n下移：下键\n落下：确认键</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_background">#FFFFFF</color>
+    <color name="time">#666666</color>
+    <color name="box_border">#999999</color>
+    <color name="box_bg">#F2F2F2</color>
+    <color name="box_grid">#CCCCCC</color>
+    <color name="label">#333333</color>
+    <color name="value">#FF6600</color>
+    <color name="help">#666666</color>
+</resources>
