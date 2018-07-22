@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
@@ -25,10 +26,18 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/scores_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
+            android:text="@string/current"
+            android:textColor="@color/label"
+            android:textSize="@dimen/label" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -77,15 +86,76 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/scores_layout_highest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gap"
+            android:text="@string/highest"
+            android:textColor="@color/label"
+            android:textSize="@dimen/label" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/lable_gap_value"
+                android:layout_weight="1"
+                android:text="@string/scores"
+                android:textColor="@color/label"
+                android:textSize="@dimen/label" />
+
+            <TextView
+                android:id="@+id/scores_highest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/value"
+                android:textSize="@dimen/value" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/lable_gap_value"
+                android:layout_weight="1"
+                android:text="@string/lines"
+                android:textColor="@color/label"
+                android:textSize="@dimen/label" />
+
+            <TextView
+                android:id="@+id/lines_highest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/value"
+                android:textSize="@dimen/value" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
+            android:fontFamily="Helvetica Neue,Helvetica,Arial,sans-serif"
             android:text="@string/help"
             android:textColor="@color/help"
-            android:textSize="@dimen/help"
-            android:fontFamily="Helvetica Neue,Helvetica,Arial,sans-serif"/>
+            android:textSize="@dimen/help" />
 
         <com.github.talent518.tetris.view.TimeView
+            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"

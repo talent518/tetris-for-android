@@ -3,6 +3,7 @@ package com.github.talent518.tetris.view;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
@@ -11,20 +12,65 @@ import android.view.View;
 
 import com.github.talent518.tetris.R;
 
+import java.util.Random;
+
 public class PromptView extends View {
     private static final String TAG = PromptView.class.getSimpleName();
     private static final boolean I = true;
     private static final boolean O = false;
+    private static final boolean[][][] shapes = new boolean[][][]{
+        {
+            {I, O, O, O},
+            {I, O, O, O},
+            {I, O, O, O},
+            {I, O, O, O}
+        },
+        {
+            {I, O, O, O},
+            {I, O, O, O},
+            {I, I, O, O},
+            {O, O, O, O}
+        },
+        {
+            {O, I, O, O},
+            {O, I, O, O},
+            {I, I, O, O},
+            {O, O, O, O}
+        },
+        {
+            {O, I, O, O},
+            {I, I, I, O},
+            {O, O, O, O},
+            {O, O, O, O}
+        },
+        {
+            {I, I, O, O},
+            {I, I, O, O},
+            {O, O, O, O},
+            {O, O, O, O}
+        },
+        {
+            {O, I, O, O},
+            {I, I, O, O},
+            {I, O, O, O},
+            {O, O, O, O}
+        },
+        {
+            {I, O, O, O},
+            {I, I, O, O},
+            {O, I, O, O},
+            {O, O, O, O}
+        }
+    };
+    private static final int[] colors = new int[]{
+        0x00, 0x33, 0x66, 0x99, 0xcc, 0xff
+    };
 
     private int bgColor, borderColor, gridColor;
-    private boolean[][] shape = new boolean[][]{
-        {I, I, O, O},
-        {I, I, O, O},
-        {I, O, O, O},
-        {I, O, O, O}
-    };
-    private int shapeLeftTopColor = 0xFFCCCCCC, shapeColor = 0xFF999999, shapeRightBottomColor = 0xFF666666;
+    private boolean[][] shape;
+    private int shapeLeftTopColor, shapeColor, shapeRightBottomColor;
     private int blockSize;
+    private Random random = new Random();
 
     public PromptView(Context context) {
         super(context);
@@ -71,6 +117,8 @@ public class PromptView extends View {
         bgColor = res.getColor(R.color.box_bg);
         borderColor = res.getColor(R.color.box_border);
         gridColor = res.getColor(R.color.box_grid);
+
+        nextShape();
     }
 
     @Override
@@ -122,5 +170,41 @@ public class PromptView extends View {
                 }
             }
         }
+    }
+
+    public boolean[][] getShape() {
+        return shape;
+    }
+
+    public int getShapeColor() {
+        return shapeColor;
+    }
+
+    public int getShapeLeftTopColor() {
+        return shapeLeftTopColor;
+    }
+
+    public int getShapeRightBottomColor() {
+        return shapeRightBottomColor;
+    }
+
+    public void nextShape() {
+        random.setSeed(System.currentTimeMillis());
+
+        shape = shapes[random.nextInt(shapes.length)];
+
+        int r, g, b;
+
+        do {
+            r = colors[random.nextInt(colors.length - 2) + 1];
+            g = colors[random.nextInt(colors.length - 2) + 1];
+            b = colors[random.nextInt(colors.length - 2) + 1];
+        } while (r == g && r == b && r >= 0x99);
+
+        shapeColor = Color.rgb(r, g, b);
+        shapeLeftTopColor = Color.rgb(r + 0x33, g + 0x33, b + 0x33);
+        shapeRightBottomColor = Color.rgb(r - 0x33, g - 0x33, b - 0x33);
+
+        invalidate();
     }
 }

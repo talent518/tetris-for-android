@@ -8,4 +8,7 @@
     <color name="label">#333333</color>
     <color name="value">#FF6600</color>
     <color name="help">#666666</color>
+    <color name="dialog_bg">#88000000</color>
+    <color name="tetris">#FF6600</color>
+    <color name="tetrisShadow">#FF6600</color>
 </resources>

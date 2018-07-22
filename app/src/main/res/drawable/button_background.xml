@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="true">
+        <shape>
+            <corners android:radius="@dimen/buttonRadius" />
+            <solid android:color="#FF6600" />
+            <stroke android:width="1dp" android:color="#CC6600"/>
+            <padding android:bottom="@dimen/buttonPaddingTopBottom" android:left="@dimen/buttonPaddingLeftRight" android:right="@dimen/buttonPaddingLeftRight" android:top="@dimen/buttonPaddingTopBottom" />
+        </shape>
+    </item>
+
+    <item android:state_enabled="false">
+        <shape>
+            <corners android:radius="@dimen/buttonRadius" />
+            <solid android:color="#999999" />
+            <stroke android:width="1dp" android:color="#666666"/>
+            <padding android:bottom="@dimen/buttonPaddingTopBottom" android:left="@dimen/buttonPaddingLeftRight" android:right="@dimen/buttonPaddingLeftRight" android:top="@dimen/buttonPaddingTopBottom" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <corners android:radius="@dimen/buttonRadius" />
+            <solid android:color="#E3E3E3" />
+            <stroke android:width="1dp" android:color="#CCCCCC"/>
+            <padding android:bottom="@dimen/buttonPaddingTopBottom" android:left="@dimen/buttonPaddingLeftRight" android:right="@dimen/buttonPaddingLeftRight" android:top="@dimen/buttonPaddingTopBottom" />
+        </shape>
+    </item>
+</selector>

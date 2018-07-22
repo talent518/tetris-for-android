@@ -2,5 +2,11 @@
     <string name="app_name">tetris</string>
     <string name="scores">Scores</string>
     <string name="lines">Lines</string>
+    <string name="current">Current Record</string>
+    <string name="highest">Highest Record</string>
     <string name="help">Menu: Menu key\nPause: Menu key\nContinue: Menu key\nRotate: Up key\nLeft: Left key\nRight: Right key\nDown: Down key\nFall: Enter key</string>
+    <string name="game_new">New Game</string>
+    <string name="game_continue">Continue Game</string>
+    <string name="game_quit">Quit Game</string>
+    <string name="stoped">Game Over</string>
 </resources>

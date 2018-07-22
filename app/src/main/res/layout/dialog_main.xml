@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dialog_bg"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/game_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:elevation="@dimen/buttonElevation"
+        android:nextFocusLeft="@id/game_quit"
+        android:text="@string/game_new"
+        android:textColor="@color/button_text_color" />
+
+    <Button
+        android:id="@+id/game_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gap"
+        android:background="@drawable/button_background"
+        android:elevation="@dimen/buttonElevation"
+        android:text="@string/game_continue"
+        android:textColor="@color/button_text_color" />
+
+    <Button
+        android:id="@+id/game_quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gap"
+        android:background="@drawable/button_background"
+        android:elevation="@dimen/buttonElevation"
+        android:nextFocusRight="@id/game_new"
+        android:text="@string/game_quit"
+        android:textColor="@color/button_text_color" />
+
+</LinearLayout>
