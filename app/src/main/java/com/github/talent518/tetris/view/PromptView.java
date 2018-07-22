@@ -199,7 +199,7 @@ public class PromptView extends View {
             r = colors[random.nextInt(colors.length - 2) + 1];
             g = colors[random.nextInt(colors.length - 2) + 1];
             b = colors[random.nextInt(colors.length - 2) + 1];
-        } while (r == g && r == b && r >= 0x99);
+        } while (r == g && r == b && r >= 0x99 || shapeColor == Color.rgb(r, g, b));
 
         shapeColor = Color.rgb(r, g, b);
         shapeLeftTopColor = Color.rgb(r + 0x33, g + 0x33, b + 0x33);
