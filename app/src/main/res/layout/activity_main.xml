@@ -35,6 +35,13 @@
             android:textColor="@color/label"
             android:textSize="@dimen/label" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginBottom="5px"
+            android:layout_marginTop="5px"
+            android:background="#999999" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,6 +101,13 @@
             android:textColor="@color/label"
             android:textSize="@dimen/label" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginBottom="5px"
+            android:layout_marginTop="5px"
+            android:background="#999999" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -146,19 +160,46 @@
 
         <TextView
             android:id="@+id/help"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
+            android:text="@string/help_label"
+            android:textColor="@color/label"
+            android:textSize="@dimen/label" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginBottom="5px"
+            android:layout_marginTop="5px"
+            android:background="#999999" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:fontFamily="Helvetica Neue,Helvetica,Arial,sans-serif"
             android:text="@string/help"
             android:textColor="@color/help"
             android:textSize="@dimen/help" />
 
-        <com.github.talent518.tetris.view.TimeView
+        <TextView
             android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gap"
+            android:text="@string/time"
+            android:textColor="@color/label"
+            android:textSize="@dimen/label" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="5px"
+            android:background="#999999" />
+
+        <com.github.talent518.tetris.view.TimeView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/time"

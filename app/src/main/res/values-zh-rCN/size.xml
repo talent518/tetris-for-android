@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="label">20sp</dimen>
-    <dimen name="lable_gap_value">10sp</dimen>
-    <dimen name="value">20sp</dimen>
-    <dimen name="help">18sp</dimen>
+    <dimen name="label">16px</dimen>
+    <dimen name="lable_gap_value">9px</dimen>
+    <dimen name="value">16px</dimen>
+    <dimen name="help">14px</dimen>
 </resources>

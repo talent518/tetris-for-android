@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="time">24sp</dimen>
+    <dimen name="time">24px</dimen>
     <dimen name="gap">18px</dimen>
-    <dimen name="label">14sp</dimen>
-    <dimen name="lable_gap_value">7sp</dimen>
-    <dimen name="value">14sp</dimen>
-    <dimen name="help">12sp</dimen>
+    <dimen name="label">18px</dimen>
+    <dimen name="lable_gap_value">9px</dimen>
+    <dimen name="value">18px</dimen>
+    <dimen name="help">16px</dimen>
     <dimen name="buttonPaddingLeftRight">18px</dimen>
     <dimen name="buttonPaddingTopBottom">9px</dimen>
     <dimen name="buttonRadius">9px</dimen>
     <dimen name="buttonElevation">3px</dimen>
-    <dimen name="tetris">32sp</dimen>
+    <dimen name="tetris">32px</dimen>
 </resources>
