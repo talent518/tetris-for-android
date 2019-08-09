@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="horizontal"
     android:padding="@dimen/gap"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/left_ctrl_panel"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginRight="@dimen/gap"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.github.talent518.tetris.view.ImageView
+            android:id="@+id/left"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:src="@drawable/ctrl_left_slt" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/gap"
+            android:layout_marginRight="@dimen/gap"
+            android:orientation="vertical">
+
+            <com.github.talent518.tetris.view.ImageView
+                android:id="@+id/up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:src="@drawable/ctrl_up_slt" />
+
+            <com.github.talent518.tetris.view.ImageView
+                android:id="@+id/ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:layout_marginBottom="@dimen/gap"
+                android:onClick="onClick"
+                android:src="@drawable/ctrl_ok" />
+
+            <com.github.talent518.tetris.view.ImageView
+                android:id="@+id/down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:src="@drawable/ctrl_down_slt" />
+
+        </LinearLayout>
+
+        <com.github.talent518.tetris.view.ImageView
+            android:id="@+id/right"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:src="@drawable/ctrl_right_slt" />
+
+    </LinearLayout>
 
     <com.github.talent518.tetris.view.TetrisView
         android:id="@+id/tetris"
@@ -38,8 +97,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:layout_marginBottom="5px"
             android:layout_marginTop="5px"
+            android:layout_marginBottom="5px"
             android:background="#999999" />
 
         <LinearLayout
@@ -104,8 +163,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:layout_marginBottom="5px"
             android:layout_marginTop="5px"
+            android:layout_marginBottom="5px"
             android:background="#999999" />
 
         <LinearLayout
@@ -170,8 +229,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:layout_marginBottom="5px"
             android:layout_marginTop="5px"
+            android:layout_marginBottom="5px"
             android:background="#999999" />
 
         <TextView
@@ -204,6 +263,66 @@
             android:gravity="center"
             android:textColor="@color/time"
             android:textSize="@dimen/time" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/right_ctrl_panel"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/gap"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.github.talent518.tetris.view.ImageView
+            android:id="@id/left"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:src="@drawable/ctrl_left_slt" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/gap"
+            android:layout_marginRight="@dimen/gap"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.github.talent518.tetris.view.ImageView
+                android:id="@id/up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:src="@drawable/ctrl_up_slt" />
+
+            <com.github.talent518.tetris.view.ImageView
+                android:id="@id/ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:layout_marginBottom="@dimen/gap"
+                android:onClick="onClick"
+                android:src="@drawable/ctrl_ok" />
+
+            <com.github.talent518.tetris.view.ImageView
+                android:id="@id/down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:src="@drawable/ctrl_down_slt" />
+
+        </LinearLayout>
+
+        <com.github.talent518.tetris.view.ImageView
+            android:id="@id/right"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:src="@drawable/ctrl_right_slt" />
 
     </LinearLayout>
 

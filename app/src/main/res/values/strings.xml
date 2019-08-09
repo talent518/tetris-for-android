@@ -11,4 +11,6 @@
     <string name="game_continue">Continue Game</string>
     <string name="game_quit">Quit Game</string>
     <string name="stoped">Game Over</string>
+    <string name="left_ctrl_panel">Left control panel</string>
+    <string name="right_ctrl_panel">Right control panel</string>
 </resources>

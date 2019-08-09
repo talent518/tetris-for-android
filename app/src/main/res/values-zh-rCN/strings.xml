@@ -12,4 +12,6 @@
     <string name="game_continue">继续游戏</string>
     <string name="game_quit">退出游戏</string>
     <string name="stoped">游戏结束</string>
+    <string name="left_ctrl_panel">左控制面板</string>
+    <string name="right_ctrl_panel">右控制面板</string>
 </resources>

@@ -14,6 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.talent518.tetris.view.PromptView;
@@ -28,6 +31,7 @@ public class MainActivity extends Activity implements TetrisView.Listener, View.
 	private int nScores = 0, nScoresHighest = 0, nLines = 0, nLinesHighest = 0;
 	private SharedPreferences preferences;
 	private MenuDialog dialog;
+	private LinearLayout leftCtrlPanel, rightCtrlPanel;
 
 	private int[] marginIds = new int[]{
 		R.id.scores_layout,
@@ -42,10 +46,15 @@ public class MainActivity extends Activity implements TetrisView.Listener, View.
 
 		setContentView(R.layout.activity_main);
 
+		leftCtrlPanel = findViewById(R.id.left_ctrl_panel);
+		rightCtrlPanel = findViewById(R.id.right_ctrl_panel);
+
 		pv = findViewById(R.id.prompt);
 		tv = findViewById(R.id.tetris);
 		tv.setPromptView(pv);
 		tv.setListener(this);
+		tv.setOnClickListener(this);
+		tv.setOnTouchListener(this);
 		scores = findViewById(R.id.scores);
 		scoresHighest = findViewById(R.id.scores_highest);
 		lines = findViewById(R.id.lines);
@@ -86,14 +95,8 @@ public class MainActivity extends Activity implements TetrisView.Listener, View.
 		mlp.height = blockSize * 4;
 		pv.setLayoutParams(mlp);
 
-		View v = findViewById(R.id.main);
-		v.setPadding(gap, gap, gap, gap);
-
 		mGestureDetector = new GestureDetector(this, this);
 		mGestureDetector.setOnDoubleTapListener(this);
-
-		v.setOnClickListener(this);
-		v.setOnTouchListener(this);
 
 		// *********************************************************************************
 		// 初始化菜单对话框
@@ -184,8 +187,26 @@ public class MainActivity extends Activity implements TetrisView.Listener, View.
 	@Override
 	public void onClick(View v) {
 		Log.i(TAG, "onClick");
-
-		tv.fall();
+		switch (v.getId()) {
+			case R.id.left:
+				tv.left();
+				break;
+			case R.id.right:
+				tv.right();
+				break;
+			case R.id.up:
+				tv.rotation();
+				break;
+			case R.id.down:
+				tv.down();
+				break;
+			case R.id.ok:
+				tv.fall();
+				break;
+			default:
+				tv.fall();
+				break;
+		}
 	}
 
 	@Override
@@ -264,7 +285,7 @@ public class MainActivity extends Activity implements TetrisView.Listener, View.
 		return true;
 	}
 
-	public class MenuDialog extends Dialog implements View.OnClickListener {
+	public class MenuDialog extends Dialog implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 		Button newGame, continueGame, quitGame;
 
 		public MenuDialog(Context context) {
@@ -282,6 +303,9 @@ public class MainActivity extends Activity implements TetrisView.Listener, View.
 			setCancelable(false);
 			setCanceledOnTouchOutside(false);
 			setFinishOnTouchOutside(false);
+
+			((CheckBox) findViewById(R.id.left_ctrl_panel)).setOnCheckedChangeListener(this);
+			((CheckBox) findViewById(R.id.right_ctrl_panel)).setOnCheckedChangeListener(this);
 
 			newGame = findViewById(R.id.game_new);
 			newGame.setOnClickListener(this);
@@ -329,6 +353,15 @@ public class MainActivity extends Activity implements TetrisView.Listener, View.
 					dismiss();
 					finish();
 					break;
+			}
+		}
+
+		@Override
+		public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			if(buttonView.getId() == R.id.left_ctrl_panel) {
+				leftCtrlPanel.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+			} else {
+				rightCtrlPanel.setVisibility(isChecked ? View.VISIBLE : View.GONE);
 			}
 		}
 	}
