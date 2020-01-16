@@ -6,7 +6,7 @@
     <string name="current">当前记录</string>
     <string name="highest">最高记录</string>
     <string name="help_label">帮助</string>
-    <string name="help">菜单：菜单键\n暂停：菜单键\n继续：菜单键\n旋转：上键\n左移：下键\n右移：右键\n下移：下键\n落下：确认键</string>
+    <string name="help">菜单：菜单键\n暂停：菜单键\n继续：菜单键\n旋转：上键\n左移：左键\n右移：右键\n下移：下键\n落下：确认键</string>
     <string name="time">时间</string>
     <string name="game_new">新游戏</string>
     <string name="game_continue">继续游戏</string>
